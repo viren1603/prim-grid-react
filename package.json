@@ -1,10 +1,9 @@
 {
   "name": "prim-grid-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A powerful and customizable data grid built for modern web apps",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  
   "scripts": {
     "build": "tsc && webpack --mode production",
     "type-check": "tsc --noEmit",
