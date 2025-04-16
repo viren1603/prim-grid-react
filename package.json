@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "A powerful and customizable data grid built for modern web apps",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  
   "scripts": {
-    "build": "webpack --mode production",
+    "build": "tsc && webpack --mode production",
+    "type-check": "tsc --noEmit",
     "prepublishOnly": "npm run build"
   },
   "repository": {
@@ -24,9 +27,11 @@
   },
   "devDependencies": {
     "@babel/core": "^7.26.10",
+    "@babel/plugin-transform-runtime": "^7.26.10",
     "@babel/preset-env": "^7.26.9",
     "@babel/preset-react": "^7.26.3",
     "@babel/preset-typescript": "^7.27.0",
+    "@babel/runtime": "^7.27.0",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "babel-loader": "^10.0.0",

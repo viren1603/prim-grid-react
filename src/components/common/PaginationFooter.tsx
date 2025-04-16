@@ -1,13 +1,7 @@
 import React from 'react';
 import { FaChevronLeft, FaChevronRight, FaAngleDoubleLeft, FaAngleDoubleRight } from 'react-icons/fa';
+import { PaginationFooterProps } from '../../types';
 
-interface PaginationFooterProps {
-  pageSize: number;
-  total: number;
-  currentPage: number;
-  onPageSizeChange: (size: number) => void;
-  onPageChange: (page: number) => void;
-}
 
 export const PaginationFooter: React.FC<PaginationFooterProps> = ({
   pageSize = 25,

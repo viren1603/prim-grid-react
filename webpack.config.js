@@ -1,21 +1,34 @@
 const path = require('path');
 
 module.exports = {
-    entry: './src/index.tsx',  // Changed from .js to .tsx
+    entry: './src/index.tsx',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'index.js',
         libraryTarget: 'commonjs2'
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.js']  // Add TypeScript extensions
+        extensions: ['.tsx', '.ts', '.js'],
+        alias: {
+            'react/jsx-runtime': require.resolve('react/jsx-runtime'),
+            'react/jsx-dev-runtime': require.resolve('react/jsx-dev-runtime')
+        }
     },
     module: {
         rules: [
             {
                 test: /\.(ts|tsx)$/,
                 exclude: /node_modules/,
-                use: 'ts-loader'  // Changed from babel-loader
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            '@babel/preset-env',
+                            ['@babel/preset-react', { runtime: 'automatic' }],
+                            '@babel/preset-typescript'
+                        ]
+                    }
+                }
             },
             {
                 test: /\.css$/,

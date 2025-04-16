@@ -1,19 +1,22 @@
 {
-    "compilerOptions": {
-      "outDir": "./dist/",
-      "module": "esnext",
-      "target": "es5",
-      "lib": ["es6", "dom"],
-      "sourceMap": true,
-      "allowJs": true,
-      "jsx": "react",
-      "moduleResolution": "node",
-      "esModuleInterop": true,
-      "strict": true,
-      "forceConsistentCasingInFileNames": true,
-      "noImplicitReturns": true,
-      "noUnusedLocals": true
-    },
-    "include": ["src/**/*"],
-    "exclude": ["node_modules"]
-  }
+  "compilerOptions": {
+    "outDir": "./dist",
+    "module": "esnext",
+    "target": "es2017",
+    "lib": ["es2017", "dom", "dom.iterable"],
+    "jsx": "react-jsx", // This is correct for React 17+
+    "declaration": true,
+    "declarationDir": "./dist",
+    "emitDeclarationOnly": false,
+    "noEmit": false,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/*.test.tsx"]
+}

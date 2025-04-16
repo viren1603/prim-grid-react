@@ -1,10 +1,7 @@
 import React from 'react';
+import { ExpandedRowProps } from '../../types';
 
-interface ExpandedRowProps {
-  row: any;
-  colSpan: number;
-  expandedRowRender: (record: any) => React.ReactNode;
-}
+
 
 const ExpandedRow: React.FC<ExpandedRowProps> = ({ row, colSpan, expandedRowRender }) => {
   return (
